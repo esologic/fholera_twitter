@@ -1,0 +1,50 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.8
+        environment:
+          TZ: "America/New_York"
+    working_directory: ~/repo
+    environment:
+      TZ: "America/New_York"
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r ./requirements/dev.txt -r ./requirements/test.txt -r ./requirements/prod.txt
+
+      - run:
+          name: Run Tests
+          command: |
+            ./bin/run_tests.sh
+
+      - run:
+          name: Run Pylint
+          command: |
+            ./bin/run_pylint.sh
+
+      - run:
+          name: Run Black
+          command: |
+            ./bin/run_black.sh
+
+      - run:
+          name: Run Isort
+          command: |
+            ./bin/run_isort.sh
+
+      - run:
+          name: Run Mypy
+          command: |
+            ./bin/run_mypy.sh
+
+      - run:
+          name: Run Vulture
+          command: |
+            ./bin/run_vulture.sh

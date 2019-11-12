@@ -1,0 +1,5 @@
+black==18.9b0
+isort[requirements,pyproject]==4.3.16
+pre-commit==1.14.4
+pylint==2.3.0
+vulture==1.0

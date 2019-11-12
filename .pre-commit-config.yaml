@@ -1,0 +1,32 @@
+fail_fast: true
+default_language_version:
+    python: python3.6
+repos:
+
+-   repo: local
+    hooks:
+    - id: black
+      name: black
+      language: python
+      entry: ./bin/apply_black.sh
+    - id: pylint
+      name: pylint
+      language: python
+      entry: ./bin/run_pylint.sh
+    - id: isort
+      name: isort
+      language: python
+      entry: ./bin/apply_isort.sh
+    - id: mypy
+      name: mypy
+      language: python
+      entry: ./bin/run_mypy.sh
+    - id: vulture
+      name: vulture
+      language: python
+      entry: ./bin/run_vulture.sh
+    - id: pytest
+      name: pytest
+      language: python
+      stages: [push]
+      entry: ./bin/run_tests.sh

@@ -63,8 +63,8 @@ def main() -> None:
     """
 
     api = make_api(
-        app_consumer_key=os.environ.get(consumer_key_env_name),
-        app_consumer_secret=os.environ.get(consumer_secret_env_name),
+        app_consumer_key=os.environ[consumer_key_env_name],
+        app_consumer_secret=os.environ[consumer_secret_env_name],
         pickled_user_token_path="./key.p",
     )
 

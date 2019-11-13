@@ -86,6 +86,8 @@ celerybeat-schedule
 # virtualenv
 .venv
 venv/
+.venvw
+venvw/
 ENV/
 
 # Spyder project settings
@@ -103,3 +105,6 @@ ENV/
 
 # pycharm
 .idea/
+
+# ignore all keyfiles
+src/*.p

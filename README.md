@@ -1,6 +1,7 @@
 # Fholera Twitter - fholera_twitter 
 
-Description: Follow the followers of a given twitter account or accounts.
+A simple desktop twitter bot that follows the followers of a given user or users on an
+authenticated account.
 
 
 ## Usage
@@ -8,7 +9,8 @@ Description: Follow the followers of a given twitter account or accounts.
 
 ####  Environment variables
 
-TODO: add if needed
+* `FHOLERA_TWITTER_APP_CONSUMER_KEY`
+* `FHOLERA_TWITTER_APP_CONSUMER_SECRET`
 
 #### Correct usage
 
